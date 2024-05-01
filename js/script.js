@@ -29,6 +29,7 @@ var nam = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
   
+  var yer = document.getElementById("year").value;
   var dep = document.getElementById("dept").value;
   var cls = document.getElementById("class").value;
 
@@ -42,6 +43,10 @@ var nam = document.getElementById("name").value;
     alert("Email is Error.");
     return false;
   }   
+  else if (yer === "Select The Year") {
+    alert("Please select The Year.");
+    return false;
+  }
   else if (dep === "Select Your Department") {
     alert("Please select your department.");
     return false;
@@ -50,7 +55,7 @@ var nam = document.getElementById("name").value;
     return false;
   }
   else if (mgf === "") {
-    alert("Please Fill The FeedBack");
+    alert("Please Fill The message");
     return false;
   } 
 
