@@ -13,7 +13,7 @@ form.addEventListener('submit', e => {
           msg.innerHTML = "Your feedback has been submitted. Thank you for taking the time to provide it 😊";
           setTimeout(function(){
             msg.innerHTML = "";
-          },2000)
+          },5000)
           form.reset();
         } else {
           throw new Error('Network response was not ok.');
