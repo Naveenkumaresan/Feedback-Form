@@ -56,12 +56,11 @@ function validate() {
   }
 }
 
-function displayMessage() {
+ alert("Please wait 1 or 2 seconds before submitting your feedback.");
     setTimeout(function(){
         // Clear the alert after 4 seconds (4000 milliseconds)
-        alert("Please wait 1 or 2 seconds to submitting your feedback.");
-    }, 500);
-}
+        // alert("You can now submit your feedback.");
+    }, 4000);
 
 function validateAndSubmit() {
   if (validate()) {
