@@ -24,42 +24,48 @@ form.addEventListener('submit', e => {
 });
 
 function validate() {
-var nam = document.getElementById("name").value;
-
+  var nam = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
-  
   var yer = document.getElementById("year").value;
   var dep = document.getElementById("dept").value;
   var cls = document.getElementById("class").value;
-
   var mgf = document.getElementById("msgage").value;
 
-  if (nam ==="") {
-    alert("Enter Your Name");
-    return false;
-  }
-  else if (!emailregex.test(email)) {
-    alert("Email is Error.");
-    return false;
-  }   
-  else if (yer === "Select The Year") {
-    alert("Please select The Year.");
-    return false;
-  }
-  else if (dep === "Select Your Department") {
-    alert("Please select your department.");
-    return false;
+  if (nam === "") {
+      alert("Enter Your Name");
+      return false;
+  } else if (!emailregex.test(email)) {
+      alert("Email is Error.");
+      return false;
+  } else if (yer === "Select The Year") {
+      alert("Please select The Year.");
+      return false;
+  } else if (dep === "Select Your Department") {
+      alert("Please select your department.");
+      return false;
   } else if (cls === "Select Your Section") {
-    alert("Please select your section.");
-    return false;
+      alert("Please select your section.");
+      return false;
+  } else if (mgf === "") {
+      alert("Please Fill The Feedback");
+      return false;
+  } else {
+      // If all validations pass, return true
+      return true;
   }
-  else if (mgf === "") {
-    alert("Please Fill The Feedback");
-    return false;
-  } 
-  else{
-    alert("Please wait 1 or 2 seconds to submitting your feedback.");
+}
+
+function displayMessage() {
+    setTimeout(function(){
+        // Clear the alert after 4 seconds (4000 milliseconds)
+        alert("Please wait 1 or 2 seconds to submitting your feedback.");
+    }, 500);
+}
+
+function validateAndSubmit() {
+  if (validate()) {
+      displayMessage();
+      // Any other submission logic here
   }
-  return true; // If all validations pass
 }
