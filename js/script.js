@@ -13,7 +13,7 @@ form.addEventListener('submit', e => {
           msg.innerHTML = "Your feedback has been submitted. Thank you for taking the time to provide it 😊";
           setTimeout(function(){
             msg.innerHTML = "";
-          },5000)
+          },2000)
           form.reset();
         } else {
           throw new Error('Network response was not ok.');
@@ -24,37 +24,43 @@ form.addEventListener('submit', e => {
 });
 
 function validate() {
-  var nam = document.getElementById("name").value;
+var nam = document.getElementById("name").value;
+
   var email = document.getElementById("email").value;
   var emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
+  
   var yer = document.getElementById("year").value;
   var dep = document.getElementById("dept").value;
   var cls = document.getElementById("class").value;
+
   var mgf = document.getElementById("msgage").value;
 
-  if (nam === "") {
-      alert("Enter Your Name");
-      return false;
-  } else if (!emailregex.test(email)) {
-      alert("Email is Error.");
-      return false;
-  } else if (yer === "Select The Year") {
-      alert("Please select The Year.");
-      return false;
-  } else if (dep === "Select Your Department") {
-      alert("Please select your department.");
-      return false;
-  } else if (cls === "Select Your Section") {
-      alert("Please select your section.");
-      return false;
-  } else if (mgf === "") {
-      alert("Please Fill The Feedback");
-      return false;
-  } else {
-      alert("Please wait 1 or 2 seconds to submitting your feedback.");
-      
+  if (nam ==="") {
+    alert("Enter Your Name");
+    return false;
   }
-  return true;
-}
+  else if (!emailregex.test(email)) {
+    alert("Email is Error.");
+    return false;
+  }   
+  else if (yer === "Select The Year") {
+    alert("Please select The Year.");
+    return false;
+  }
+  else if (dep === "Select Your Department") {
+    alert("Please select your department.");
+    return false;
+  } else if (cls === "Select Your Section") {
+    alert("Please select your section.");
+    return false;
+  }
+  else if (mgf === "") {
+    alert("Please Fill The Feedback");
+    return false;
+  } 
+  else{
+    alert("Please wait 2 or 3 seconds to submit You feedback");
+  }
 
+  return true; // If all validations pass
 }
