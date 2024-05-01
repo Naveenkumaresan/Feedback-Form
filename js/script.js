@@ -58,6 +58,8 @@ var nam = document.getElementById("name").value;
     alert("Please Fill The Feedback");
     return false;
   } 
-
+  else{
+    alert("Please wait 1 or 2 seconds to submitting your feedback.");
+  }
   return true; // If all validations pass
 }
