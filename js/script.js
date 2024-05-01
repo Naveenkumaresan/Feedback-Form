@@ -9,8 +9,8 @@ form.addEventListener('submit', e => {
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         if (response.ok) {
-          // alert("Thanks for your feedback! 😊");
-          msg.innerHTML = "Thanks for your feedback! 😊";
+          alert("Thanks for your feedback! 😊");
+          msg.innerHTML = "Your feedback has been submitted. Thank you for taking the time to provide it 😊";
           setTimeout(function(){
             msg.innerHTML = "";
           },2000)
