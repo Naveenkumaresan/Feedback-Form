@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-     <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta http-equiv="Cache-Control" content="max-age=3600">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
@@ -27,23 +27,27 @@
                     <input name="Email" id="email" class="container form-control placeholder col-12 bg-light mb-2 " type="email"
                         placeholder="Enter Your Email" style="margin-bottom:4px;" required>
                   
-                        <select name="Year" id="dept"
+                        <select name="Year" id="year"
                         class="container form-control placeholder col-12 bg-light form-select mb-2 " rows="6"
                         placeholder="Select Your Department" required>
-                              <option selected required>Select Your Year</option>
-                        <option value="1St year">1st year</option>
+                        <option selected required>Select The Year</option>
+                        <option value="1st year">1st year</option>
                         <option value="2nd year">2nd year</option>
                         <option value="3rd year">3rd year</option>
-<!--                         <option value="ECE">4th year</option> -->
+                    
                     </select>
+
+                        <select name="Department" id="dept"
+                        class="container form-control placeholder col-12 bg-light form-select mb-2 " rows="6"
+                        placeholder="Select Your Department" required>
                         <option selected required>Select Your Department</option>
                         <option value="CSE">CSE</option>
-<!--                         <option value="AIDS">AIDS</option>
-                        <option value="IT">IT</option> -->
+                        <option value="AIDS">AIDS</option>
+                        <option value="IT">IT</option>
                         <option value="ECE">ECE</option>
-<!--                         <option value="EEE">EEE</option>
+                        <option value="EEE">EEE</option>
                         <option value="MECH">MECH</option>
-                        <option value="MECHTRONS">MECHTRONS</option> -->
+                        <option value="MECHTRONS">MECHTRONS</option>
                     </select>
                     
                     <select name="Section" id="class"
@@ -57,7 +61,7 @@
                     </select>
                     
                     <textarea name="Message" id="msgage" class="container form-control placeholder col-12 bg-light text-capitalize "
-                        rows="6" placeholder="Enter Your FeedBack" required></textarea>
+                        rows="6" placeholder="Enter Your Message" required></textarea>
                     <div class="container text-center">
                         <button type="submit" class="btn text-center" id="btn" onclick="validate()">Send</button>
                     </div>
@@ -71,8 +75,9 @@
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/script.js"></script>
- 
+
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
