@@ -51,20 +51,10 @@ function validate() {
       alert("Please Fill The Feedback");
       return false;
   } else {
-      // If all validations pass, return true
-      return true;
+      alert("Please wait 1 or 2 seconds to submitting your feedback.");
+      
   }
+  return true;
 }
 
- alert("Please wait 1 or 2 seconds before submitting your feedback.");
-    setTimeout(function(){
-        // Clear the alert after 4 seconds (4000 milliseconds)
-        // alert("You can now submit your feedback.");
-    }, 4000);
-
-function validateAndSubmit() {
-  if (validate()) {
-      displayMessage();
-      // Any other submission logic here
-  }
 }
