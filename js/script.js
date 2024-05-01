@@ -55,7 +55,7 @@ var nam = document.getElementById("name").value;
     return false;
   }
   else if (mgf === "") {
-    alert("Please Fill The message");
+    alert("Please Fill The Feedback");
     return false;
   } 
 
