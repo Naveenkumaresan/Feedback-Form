@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="container form-main">
+        <form name="submit-to-google-sheet" class="form-inline" id="myForm">
+            <label><span class="hed">FeedBack Form</span>
+            </label>
+<p class="topi mt-3">Seminar Feedback</p>
+            <p class="display-6 cont-text">
+                Your Feedback is Important!!!
+            </p>
+            <div class="form-group">
+                <ceter><input name="Name" id="name"
+                        class="container form-control placeholder col-12 bg-white text-capitalize   mb-2 " type="text"
+                        placeholder="Enter Your Name" style="margin-bottom:4px;" required >
+                    <input name="Email" id="email" class="container form-control placeholder col-12 bg-light mb-2 " type="email"
+                        placeholder="Enter Your Email" style="margin-bottom:4px;" required>
+                  
+                        <select name="Department" id="dept"
+                        class="container form-control placeholder col-12 bg-light form-select mb-2 " rows="6"
+                        placeholder="Select Your Department" required>
+                        <option selected required>Select Your Department</option>
+                        <option value="CSE">CSE</option>
+                        <option value="AIDS">AIDS</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="MECHTRONS">MECHTRONS</option>
+                    </select>
+                    
+                    <select name="Section" id="class"
+                        class="container form-control placeholder col-12 bg-light form-select mb-2 " rows="6"
+                        placeholder="Select Your Department">
+                        <option selected>Select Your Section</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                    
+                    <textarea name="Message" id="msgage" class="container form-control placeholder col-12 bg-light text-capitalize "
+                        rows="6" placeholder="Enter Your Message" required></textarea>
+                    <div class="container text-center">
+                        <button type="submit" class="btn text-center" id="btn" onclick="validate()">Send</button>
+                    </div>
+                    <span id="msg" class="text-black "></span>
+            </div>
+        </form>
+    </section>
+    
+    <footer>
+        <h6>&copy; Copyright Owned by Naveen</h6>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="js/script.js"></script> -->
+   <script>const scriptURL = 'https://script.google.com/macros/s/AKfycbyYNGgOJGPqF9DuNAjtO1byvj_2WyPMbO_V-kAQkAA9bFqpgDUiNvEmwDZOb_i_MNF90g/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+    
+      // Run validation function before submitting the form
+      if (validate()) {
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => {
+            if (response.ok) {
+              // alert("Thanks for your feedback! 😊");
+              msg.innerHTML = "Thanks for your feedback! 😊";
+              setTimeout(function(){
+                msg.innerHTML = "";
+              },2000)
+              form.reset();
+            } else {
+              throw new Error('Network response was not ok.');
+            }
+          })
+          .catch(error => console.error('Error!', error.message));
+      }
+    });
+    
+    function validate() {
+    var nam = document.getElementById("name").value;
+    
+      var email = document.getElementById("email").value;
+      var emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
+      
+      var dep = document.getElementById("dept").value;
+      var cls = document.getElementById("class").value;
+    
+      var mgf = document.getElementById("msgage").value;
+    
+      if (nam ==="") {
+        alert("Enter Your Name");
+        return false;
+      }
+      else if (!emailregex.test(email)) {
+        alert("Email is Error.");
+        return false;
+      }   
+      else if (dep === "Select Your Department") {
+        alert("Please select your department.");
+        return false;
+      } else if (cls === "Select Your Section") {
+        alert("Please select your section.");
+        return false;
+      }
+      else if (mgf === "") {
+        alert("Please Fill The message");
+        return false;
+      } 
+    
+      return true; // If all validations pass
+    }
+    </script>
+</body>
+
+</html>
